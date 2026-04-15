@@ -3,9 +3,12 @@ Application configuration
 """
 
 from typing import Optional
-import os
+from pathlib import Path
 from pydantic_settings import BaseSettings
 from pydantic import ConfigDict
+
+
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
@@ -45,7 +48,12 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     
     model_config = ConfigDict(
-        env_file=".env",
+        env_file=(
+            BASE_DIR / ".env.local",
+            BASE_DIR / ".env",
+            ".env.local",
+            ".env",
+        ),
         case_sensitive=False,
         extra="ignore"  # Ignore extra fields from .env
     )
