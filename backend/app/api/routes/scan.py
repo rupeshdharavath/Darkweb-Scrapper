@@ -2,7 +2,6 @@
 Scan-related API routes
 """
 
-from typing import Optional
 from fastapi import APIRouter, HTTPException
 from app.schemas.scan import ScanRequest, ScanResponse
 from app.schemas.common import ComparisonResponse

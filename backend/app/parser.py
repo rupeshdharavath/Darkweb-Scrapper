@@ -33,7 +33,7 @@ DOWNLOADABLE_EXTENSIONS = {
 }
 
 
-def detect_file_links(links, base_url=None):
+def detect_file_links(links):
     """Detect downloadable files from link list"""
     file_links = []
     
@@ -109,7 +109,7 @@ def parse_html(html_content, base_url=None):
         keywords = extract_keywords(text_content)
 
         # Extract downloadable file links
-        file_links = detect_file_links(links, base_url)
+        file_links = detect_file_links(links)
 
         parsed_data = {
             "title": title_text,

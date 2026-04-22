@@ -9,9 +9,6 @@ import requests
 from app.core.config import settings
 from app.utils import logger
 
-
-MAX_RETRIES = 3
-
 # Tor SOCKS5 Proxy Configuration
 TOR_PROXIES = {
     "http": "socks5h://127.0.0.1:9050",
