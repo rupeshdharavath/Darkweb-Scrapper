@@ -1,5 +1,5 @@
 """
-DarkWeb Monitor - FastAPI Main Entry Point
+Darkweb Scrapper - FastAPI Main Entry Point
 Backend API server using FastAPI
 """
 
@@ -61,7 +61,7 @@ async def startup_event():
     Execute on application startup
     """
     print("=" * 60)
-    print("🚀 DarkWeb Monitor API Starting")
+    print("🚀 Darkweb Scrapper API Starting")
     print(f"📋 Version: {settings.app_version}")
     print(f"🌐 Server: http://{settings.host}:{settings.port}")
     print(f"📖 Docs: http://{settings.host}:{settings.port}/docs")
@@ -74,7 +74,7 @@ async def shutdown_event():
     Execute on application shutdown
     """
     print("=" * 60)
-    print("🛑 DarkWeb Monitor API Shutting Down")
+    print("🛑 Darkweb Scrapper API Shutting Down")
     print("=" * 60)
 
 

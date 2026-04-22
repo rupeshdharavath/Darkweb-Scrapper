@@ -1,4 +1,4 @@
-# DarkWeb Monitor - Threat Intelligence Platform
+# Darkweb Scrapper - Threat Intelligence Platform
 
 A comprehensive threat intelligence platform for monitoring and analyzing dark web sites through the Tor network. Features automated content extraction, malware detection, threat scoring, and a modern React dashboard with scan history tracking.
 
@@ -34,7 +34,7 @@ A comprehensive threat intelligence platform for monitoring and analyzing dark w
 ## 📁 Project Structure
 
 ```
-darkweb-monitor/
+darkweb-scrapper/
 │
 ├── .venv/                         # Python virtual environment
 │
@@ -104,8 +104,8 @@ darkweb-monitor/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/rupeshdharavath/darkWeb_monitor.git
-cd darkWeb_monitor
+git clone https://github.com/rupeshdharavath/darkweb_scrapper.git
+cd darkweb_scrapper
 ```
 
 ### 2. Backend Setup
@@ -127,10 +127,10 @@ pip install -r backend/requirements.txt
 Create `backend/.env`:
 ```env
 # MongoDB Atlas Configuration
-MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/darkweb_monitor?appName=darkwebCluster
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/darkweb_scrapper?appName=darkwebCluster
 
 # Database Settings
-DATABASE_NAME=darkweb_monitor
+DATABASE_NAME=darkweb_scrapper
 COLLECTION_NAME=scraped_data
 
 # Application Settings
@@ -498,7 +498,7 @@ Additional documentation files:
 
 **Developer**: Rupesh Dharavath  
 **GitHub**: [@rupeshdharavath](https://github.com/rupeshdharavath)  
-**Repository**: [darkWeb_monitor](https://github.com/rupeshdharavath/darkWeb_monitor)
+**Repository**: [darkweb_scrapper](https://github.com/rupeshdharavath/darkweb_scrapper)
 
 ## 📜 License
 

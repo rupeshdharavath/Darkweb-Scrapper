@@ -2,7 +2,7 @@
 
 ## Overview
 
-Your darkweb monitor now has **enterprise-grade URL availability monitoring**. The system classifies each .onion URL into one of four status categories based on network response behavior.
+Your darkweb scrapper now has **enterprise-grade URL availability monitoring**. The system classifies each .onion URL into one of four status categories based on network response behavior.
 
 ---
 

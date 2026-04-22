@@ -1,5 +1,5 @@
 """
-Professional Logging System for DarkWeb Monitor
+Professional Logging System for Darkweb Scrapper
 Implements rotating file handlers for system logs and alerts
 """
 
@@ -11,7 +11,7 @@ from logging.handlers import RotatingFileHandler
 os.makedirs("logs", exist_ok=True)
 
 # Create main logger
-logger = logging.getLogger("darkweb_monitor")
+logger = logging.getLogger("darkweb_scrapper")
 logger.setLevel(logging.INFO)
 
 # Prevent duplicate handlers if logger is reloaded

@@ -88,7 +88,7 @@ cat backend/logs/system.log
 
 **Expected output:**
 ```
-2026-02-21 14:25:10 - INFO - 🚀 DarkWeb Monitor Starting
+2026-02-21 14:25:10 - INFO - 🚀 Darkweb Scrapper Starting
 2026-02-21 14:25:11 - INFO - Setting up Tor connection...
 2026-02-21 14:25:12 - INFO - ✅ Tor connection established successfully
 2026-02-21 14:25:13 - INFO - Connecting to database...

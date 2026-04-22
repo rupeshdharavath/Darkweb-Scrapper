@@ -2,7 +2,7 @@
 
 ## System Architecture
 
-Your DarkWeb Monitor is now a **fully operational intelligence monitoring platform** with:
+Your Darkweb Scrapper is now a **fully operational intelligence monitoring platform** with:
 - ✅ **Alert Engine** - Real-time threat detection and alerting
 - ✅ **IOC Correlation** - Track and detect reused threat indicators
 - ✅ **Three MongoDB Collections** - scraped_data, alerts, iocs

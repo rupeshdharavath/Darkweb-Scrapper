@@ -1,7 +1,7 @@
 # ClamAV Integration Guide
 
 ## Overview
-This document describes the ClamAV signature-based malware detection integration added to the DarkWeb Monitor system.
+This document describes the ClamAV signature-based malware detection integration added to the Darkweb Scrapper system.
 
 ## What Was Added
 

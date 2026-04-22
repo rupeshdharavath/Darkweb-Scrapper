@@ -1,5 +1,5 @@
 """
-DarkWeb Monitor Application
+Darkweb Scrapper Application
 """
 
 __version__ = "1.0.0"

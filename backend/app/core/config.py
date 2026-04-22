@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     """Application settings"""
     
     # API Settings
-    app_name: str = "DarkWeb Monitor API"
+    app_name: str = "Darkweb Scrapper API"
     app_version: str = "2.0.0"
     api_prefix: str = ""
     
@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     
     # MongoDB Configuration
     mongodb_uri: Optional[str] = None
-    database_name: str = "darkweb_monitor"
+    database_name: str = "darkweb_scrapper"
     collection_name: str = "scraped_data"
     
     # Tor Configuration

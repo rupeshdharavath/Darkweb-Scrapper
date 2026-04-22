@@ -105,7 +105,7 @@ urls_to_scrape = [
 The file already has working URLs configured. Just run:
 
 ```bash
-cd /home/kali/mini_project/darkweb-monitor
+cd /home/kali/mini_project/darkweb-scrapper
 python backend/main.py
 ```
 
@@ -146,7 +146,7 @@ curl --socks5-hostname 127.0.0.1:9050 http://thehiddenwiki.onion/
 ## 📊 Expected Output
 
 ```
-2026-02-21 16:17:30 - INFO - 🚀 DarkWeb Monitor Starting
+2026-02-21 16:17:30 - INFO - 🚀 Darkweb Scrapper Starting
 2026-02-21 16:17:31 - INFO - ✅ Tor connection established successfully
 2026-02-21 16:17:42 - INFO - ✅ Database connection successful
 2026-02-21 16:17:44 - INFO - ✅ URL ONLINE: https://httpbin.org/html (Time: 1.20s)
@@ -154,7 +154,7 @@ curl --socks5-hostname 127.0.0.1:9050 http://thehiddenwiki.onion/
 2026-02-21 16:17:56 - INFO - Running intelligence analysis...
 2026-02-21 16:17:56 - INFO - ✅ Successfully processed and stored data
 2026-02-21 16:17:56 - INFO - 🟢 ONLINE  : 1
-2026-02-21 16:17:56 - INFO - ✅ DarkWeb Monitor Completed
+2026-02-21 16:17:56 - INFO - ✅ Darkweb Scrapper Completed
 ```
 
 ## ⚡ Quick Health Check
@@ -162,7 +162,7 @@ curl --socks5-hostname 127.0.0.1:9050 http://thehiddenwiki.onion/
 Run this to verify everything works:
 
 ```bash
-cd /home/kali/mini_project/darkweb-monitor
+cd /home/kali/mini_project/darkweb-scrapper
 python backend/main.py
 echo ""
 echo "=== Check Results ==="
