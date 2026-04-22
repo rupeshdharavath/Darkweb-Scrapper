@@ -6,6 +6,7 @@ Handles storing and retrieving scraped data
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
 from app.core.config import settings
+from app.models.collections import AlertsModel, IOCModel, MonitorModel
 from app.utils import logger, get_timestamp
 
 
@@ -41,9 +42,9 @@ class DatabaseManager:
 
             self.db = self.client[settings.database_name]
             self.collection = self.db[settings.collection_name]
-            self.alerts = self.db["alerts"]  # Alert collection for threat notifications
-            self.iocs = self.db["iocs"]      # IOC collection for indicators tracking
-            self.monitors = self.db["monitors"]  # Monitors collection for active monitoring jobs
+            self.alerts = self.db[AlertsModel.collection_name]
+            self.iocs = self.db[IOCModel.collection_name]
+            self.monitors = self.db[MonitorModel.collection_name]
 
             logger.info("Successfully connected to MongoDB Atlas")
             return True

@@ -2,7 +2,7 @@
 Monitor management API routes
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from app.schemas.monitor import (
     MonitorCreateRequest,
     MonitorCreateResponse,
@@ -12,7 +12,15 @@ from app.schemas.monitor import (
     MonitorDeleteAllResponse,
     MonitorActionResponse
 )
-from app.services.monitor_service import MonitorService
+from app.controllers.monitor_controller import (
+    list_monitors_controller,
+    create_monitor_controller,
+    get_monitor_controller,
+    delete_monitor_controller,
+    delete_all_monitors_controller,
+    pause_monitor_controller,
+    resume_monitor_controller,
+)
 
 router = APIRouter()
 
@@ -22,11 +30,7 @@ async def list_monitors():
     """
     Get all active monitors with last scan details
     """
-    try:
-        result = await MonitorService.list_monitors()
-        return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+    return await list_monitors_controller()
 
 
 @router.post("/monitors", response_model=MonitorCreateResponse, status_code=201, tags=["Monitors"])
@@ -37,13 +41,7 @@ async def create_monitor(request: MonitorCreateRequest):
     - **url**: URL to monitor
     - **interval**: Monitoring interval in minutes (default: 5)
     """
-    try:
-        result = await MonitorService.create_monitor(request.url, request.interval)
-        return result
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+    return await create_monitor_controller(request)
 
 
 @router.get("/monitors/{monitor_id}", response_model=MonitorResponse, tags=["Monitors"])
@@ -53,13 +51,7 @@ async def get_monitor(monitor_id: str):
     
     - **monitor_id**: Unique monitor identifier
     """
-    try:
-        result = await MonitorService.get_monitor(monitor_id)
-        return result
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+    return await get_monitor_controller(monitor_id)
 
 
 @router.delete("/monitors/all", response_model=MonitorDeleteAllResponse, tags=["Monitors"])
@@ -67,14 +59,17 @@ async def delete_all_monitors():
     """
     Delete all monitors (utility endpoint)
     """
-    try:
-        result = await MonitorService.delete_all_monitors()
-        return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+    return await delete_all_monitors_controller()
 
 
 @router.delete("/monitors/{monitor_id}", response_model=MonitorDeleteResponse, tags=["Monitors"])
+async def delete_monitor(monitor_id: str):
+    """
+    Delete a specific monitor
+
+    - **monitor_id**: Unique monitor identifier
+    """
+    return await delete_monitor_controller(monitor_id)
 
 
 @router.post("/monitors/{monitor_id}/pause", response_model=MonitorActionResponse, tags=["Monitors"])
@@ -84,11 +79,7 @@ async def pause_monitor(monitor_id: str):
     
     - **monitor_id**: Unique monitor identifier
     """
-    try:
-        result = await MonitorService.pause_monitor(monitor_id)
-        return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Failed to pause monitor")
+    return await pause_monitor_controller(monitor_id)
 
 
 @router.post("/monitors/{monitor_id}/resume", response_model=MonitorActionResponse, tags=["Monitors"])
@@ -98,8 +89,4 @@ async def resume_monitor(monitor_id: str):
     
     - **monitor_id**: Unique monitor identifier
     """
-    try:
-        result = await MonitorService.resume_monitor(monitor_id)
-        return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Failed to resume monitor")
+    return await resume_monitor_controller(monitor_id)

@@ -514,7 +514,7 @@ export default function Dashboard() {
           <div className="flex-1 min-w-[240px]">
             <input
               type="text"
-              placeholder="http://exampleonion.onion"
+              placeholder="paste onion url here"
               value={url}
               onChange={(event) => setUrl(event.target.value)}
               onKeyDown={(event) => {

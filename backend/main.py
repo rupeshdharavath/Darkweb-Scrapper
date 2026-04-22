@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.middlewares import register_exception_handlers
 from app.api.routes import (
     health_router,
     scan_router,
@@ -40,6 +41,9 @@ def create_app() -> FastAPI:
         allow_methods=settings.cors_methods,
         allow_headers=settings.cors_headers,
     )
+
+    # Register global exception handlers
+    register_exception_handlers(app)
 
     # Include routers
     app.include_router(health_router, prefix=settings.api_prefix, tags=["Health"])
